@@ -9,9 +9,23 @@ body {
 
 .container {
     width: 90%;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 20px 0;
+}
+
+.header-container{
+    display: flex;
+        justify-content: space-between;
+        align-items: center;
+}
+
+.logo{
+    max-width: 100px;
+} 
+.logo img{
+    width: 100%;
+    height: auto;
 }
 
 h1, h2, h3 {
@@ -52,10 +66,10 @@ li {
     background-attachment: fixed; /* Фіксує фон при скролі (опціонально) */
 
     padding: 10px 0;
-    position: sticky;
+   /* position: sticky;*/
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Ледь помітна лінія */
+  /*  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Ледь помітна лінія */
 }
 
 /* Оновлений стиль для секції Hero з фоновим зображенням */
@@ -65,7 +79,6 @@ li {
     background-size: cover;
     background-position: center center;
     background-attachment: fixed; /* Фіксує фон при скролі (опціонально) */
-
     padding: 80px 0; /* Збільшимо відступи */
     text-align: center;
     color: #fff;
@@ -129,7 +142,9 @@ li {
     text-shadow: none;
     /* ... інші стилі для h1 ... */
 }
-
+#main-nav{
+    display: flex;
+}
 
 /* Стилі для секцій */
 .section-light {
@@ -444,3 +459,228 @@ html {
     text-transform: uppercase; /* Великі літери */
     letter-spacing: 3px; /* Збільшений інтервал */
 }
+
+/* === Початок: Стилі Бургер-меню === */
+
+.burger-button {
+    display: none; /* Сховано на десктопі */
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1050; /* Поверх інших елементів хедера */
+}
+
+.burger-bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff; /* Колір смужок бургера */
+    margin: 5px 0;
+    transition: transform 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+}
+
+/* === Кінець: Стилі Бургер-меню === */
+
+
+/* === Початок: Очищення анімації H1 === */
+/* Забираємо пряме застосування анімації та початкову прозорість звідси */
+#hero h1 {
+    font-family: 'Sacramento', cursive; 
+    font-size: 4.5em; 
+    font-weight: normal; 
+    color: #fff; 
+    margin: 0 0 10px 0; 
+    padding: 0;
+    /* Початковий стан до додавання класу JS - без тіні, непрозорий */
+    opacity: 1; 
+    text-shadow: none; 
+}
+
+/* Застосовуємо анімацію ТІЛЬКИ через клас, що додає JS */
+#hero h1.animate-neon {
+    animation: flicker 3s linear infinite; /* Назва, тривалість, тип, нескінченно */
+     /* Світіння додається через keyframes анімації */
+}
+/* Видаляємо дублюючі @keyframes neon-glow та його застосування, залишаємо тільки flicker */
+/* === Кінець: Очищення анімації H1 === */
+
+
+/* === Початок: Адаптивність Хедера === */
+@media (max-width: 768px) {
+    .burger-button {
+        display: block; /* Показуємо бургер */
+    }
+
+    #main-nav {
+        /* Початковий стан меню на мобільних - сховано */
+        position: absolute;
+        top: 0; /* Починається зверху */
+        left: -100%; /* Сховано за лівим краєм */
+        width: 100%; /* Ширина меню */
+        height: 100vh; /* На всю висоту екрану */
+        background-color: rgba(46, 55, 72, 0.95); /* Напівпрозорий темний фон */
+        padding-top: 80px; /* Відступ зверху для лого/кнопки закриття */
+        transition: left 0.4s ease-in-out; /* Плавний виїзд */
+        z-index: 1040; /* Під кнопкою бургера/закриття */
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    #main-nav.nav-active {
+        left: 0; /* Виїжджає зліва */
+    }
+
+    #main-nav ul {
+        flex-direction: column; /* Пункти меню вертикально */
+        align-items: center;
+        padding: 0;
+    }
+
+    #main-nav ul li {
+        margin: 15px 0; /* Відступи між пунктами */
+    }
+
+    #main-nav ul li a {
+        font-size: 1.2em; /* Збільшимо шрифт у меню */
+        color: #fff; /* Робимо посилання білими в меню */
+        text-shadow: none;
+    }
+    
+    /* Анімація бургер-іконки в "хрестик" при активному меню */
+    .burger-button.active .burger-bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .burger-button.active .burger-bar:nth-child(2) {
+        opacity: 0;
+    }
+    .burger-button.active .burger-bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+}
+/* === Кінець: Адаптивність Хедера === */
+
+/* Переконайся, що інші медіа-запити не конфліктують */
+@media (max-width: 576px) {
+    /* Стилі для profile-photo, skills-grid, hero h1/h2 звідси застосовуються */
+     #hero h1 { font-size: 3em; } /* Можливо, ще зменшити на зовсім малих */
+     #hero h2 { font-size: 1em; letter-spacing: 2px;}
+}
+
+/* Плавний скрол */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Анімація мерехтіння flicker */
+@keyframes flicker {
+  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    opacity: 0.99;
+    text-shadow: 
+        0 0 1px #fff, 0 0 3px #fff, 0 0 5px #fff, 
+        0 0 7px #fed128, 0 0 10px #fed128, 0 0 15px #fed128;
+  }
+  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+    opacity: 0.4;
+    text-shadow: none;
+  }
+}
+
+/* Стилі для перемикача мов */
+.lang-switch {
+    margin-left: 20px; /* Відступ від навігації або лого */
+    /* Або margin-right, якщо розміщуєш зліва */
+}
+
+.lang-switch a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9em;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.lang-switch a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.lang-switch a.active {
+    opacity: 0.99;
+    text-shadow: 
+        0 0 0.1em #fff, 0 0 0.2em #fff, 0 0 0.3em #fff, 
+        0 0 0.4em #fed128, 0 0 0.7em #fed128, 0 0 1em #fed128, 0 0 1.5em #fed128;
+    cursor: default;
+}
+
+/* Адаптивність для перемикача мов (можна сховати або перемістити в бургер-меню) */
+@media (max-width: 768px) {
+    .lang-switch {
+         /* Наприклад, розмістити під навігацією в бургер-меню */
+         position: absolute; 
+        /* bottom: 20px;*/
+        margin-left: 0; 
+         left: 50%; 
+         transform: translateX(-50%);
+         z-index: 1041; /* Поверх фону меню */
+         /* Або просто додати як пункт в ul списку навігації */
+    }
+    /* Якщо додавати в список навігації, стилізувати як li > span */
+    /* #main-nav ul li.lang-item span { color: #ccc; } */
+    /* #main-nav ul li.lang-item a { display: inline; padding: 0 5px; } */
+}
+
+/* Якщо переміщуєш в бургер-меню, скоригуй HTML навігації, додавши li */
+/* Наприклад, в index.html: */
+/* <nav id="main-nav"> 
+     <ul>
+         ... (основні пункти) ...
+         <li class="lang-item"><span><a href="index.html" class="active">UA</a> | <a href="index-en.html">EN</a></span></li>
+     </ul>
+ </nav> 
+*/
+/* І приховати .lang-switch поза #main-nav на мобільних: */
+/*
+@media (max-width: 768px) {
+     .header-container > .lang-switch { display: none; } 
+}
+@media (min-width: 769px) {
+     #main-nav ul li.lang-item { display: none; }
+}
+*/
+/* === Початок: Стилі для кнопки "Вгору" === */
+#scrollTopBtn {
+    display: none; /* Сховано за замовчуванням */
+    position: fixed; /* Фіксоване положення */
+    bottom: 25px; /* Відступ знизу */
+    right: 25px; /* Відступ справа */
+    z-index: 999; /* Поверх більшості елементів */
+    
+    background-color: #007bff; /* Акцентний синій колір (або #323B4C) */
+    color: white; /* Колір стрілки */
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 15px; /* Розмір кнопки */
+    border-radius: 50%; /* Кругла кнопка */
+    font-size: 18px; /* Розмір стрілки */
+    line-height: 1; /* Для кращого центрування стрілки */
+    
+    opacity: 0; /* Початкова прозорість для анімації */
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease, background-color 0.3s ease; /* Плавна поява/зникнення */
+}
+
+#scrollTopBtn:hover {
+    background-color: #0056b3; /* Темніший колір при наведенні */
+}
+
+/* Клас для показу кнопки */
+#scrollTopBtn.visible {
+    display: block; /* Робимо блоком для видимості */
+    opacity: 0.8; /* Легка напівпрозорість */
+    visibility: visible;
+}
+/* === Кінець: Стилі для кнопки "Вгору" === */
