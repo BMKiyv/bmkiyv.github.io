@@ -75,7 +75,7 @@ li {
 /* Оновлений стиль для секції Hero з фоновим зображенням */
 #hero {
     background-color: #1a1a1a; /* Темний колір як запасний варіант */
-    background-image: url('./dark-wall.jpg'); /* ШЛЯХ ДО ТВОГО ФАЙЛУ */
+    background-image: url('./images/dark-wall.jpg'); /* ШЛЯХ ДО ТВОГО ФАЙЛУ */
     background-size: cover;
     background-position: center center;
     background-attachment: fixed; /* Фіксує фон при скролі (опціонально) */
