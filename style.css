@@ -21,10 +21,10 @@ body {
 }
 
 .logo{
-    max-width: 100px;
+    max-width: 100px !important;
 } 
 .logo img{
-    width: 100%;
+    width: 100% !important;
     height: auto;
 }
 
