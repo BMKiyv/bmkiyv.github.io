@@ -60,7 +60,7 @@ li {
 /* Оновлений стиль для Хедера з фоновим зображенням */
 #header {
     background-color: #1a1a1a; /* Темний колір як запасний варіант */
-    background-image: url('dark-wall.jpg'); /* ШЛЯХ ДО ТВОГО ФАЙЛУ */
+    background-image: url('./images/dark-wall.jpg'); /* ШЛЯХ ДО ТВОГО ФАЙЛУ */
     background-size: cover; /* Масштабує зображення, щоб покрити фон */
     background-position: center center; /* Центрує зображення */
     background-attachment: fixed; /* Фіксує фон при скролі (опціонально) */
