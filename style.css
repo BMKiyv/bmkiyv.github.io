@@ -1,0 +1,446 @@
+/* Загальні стилі */
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    background-color: #F5F5F5; /* Світло-сірий фон для основного контенту */
+    color: #333; /* Основний колір тексту */
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+h1, h2, h3 {
+    color: #333; /* Колір заголовків на світлому фоні */
+}
+
+h2 {
+    border-bottom: 2px solid #323B4C; /* Акцентна лінія під заголовками секцій */
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+a {
+    color: #007bff; /* Акцентний колір для посилань */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* Хедер */
+/* Оновлений стиль для Хедера з фоновим зображенням */
+#header {
+    background-color: #1a1a1a; /* Темний колір як запасний варіант */
+    background-image: url('dark-wall.jpg'); /* ШЛЯХ ДО ТВОГО ФАЙЛУ */
+    background-size: cover; /* Масштабує зображення, щоб покрити фон */
+    background-position: center center; /* Центрує зображення */
+    background-attachment: fixed; /* Фіксує фон при скролі (опціонально) */
+
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Ледь помітна лінія */
+}
+
+/* Оновлений стиль для секції Hero з фоновим зображенням */
+#hero {
+    background-color: #1a1a1a; /* Темний колір як запасний варіант */
+    background-image: url('./dark-wall.jpg'); /* ШЛЯХ ДО ТВОГО ФАЙЛУ */
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed; /* Фіксує фон при скролі (опціонально) */
+
+    padding: 80px 0; /* Збільшимо відступи */
+    text-align: center;
+    color: #fff;
+    min-height: 300px; /* Мінімальна висота для кращого ефекту */
+    display: flex; /* Використовуємо flex для центрування */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#header nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+#header nav ul li {
+    margin: 0 15px;
+}
+
+#header nav ul li a {
+    color: #fff;
+    font-weight: bold;
+}
+
+#header nav ul li a:hover {
+    color: #ddd;
+    text-decoration: none;
+}
+
+
+/* І не забудь зробити підзаголовок h2 світлим, щоб його було видно */
+#hero h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #ccc; /* Робимо підзаголовок світло-сірим */
+    border: none;
+}
+
+/* Переконайся, що колір h1 встановлено на білий або інший яскравий */
+#hero h1 {
+    font-family: 'Sacramento', cursive;
+     color: #fff; /* Білий колір для основного тексту */
+     /* ... інші стилі для h1 та анімації ... */
+}
+
+/* Замість #hero h1 { animation... } пиши: */
+#hero h1.animate-neon {
+    animation-name: flicker;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    /* animation-delay тут вже не потрібен, бо JS додасть клас в потрібний момент */
+    animation-fill-mode: forwards;
+}
+
+/* Початкові стилі залишаються для #hero h1 */
+#hero h1 {
+    color: #fff;
+    opacity: 0.5;
+    text-shadow: none;
+    /* ... інші стилі для h1 ... */
+}
+
+
+/* Стилі для секцій */
+.section-light {
+    padding: 40px 0;
+    background-color: #F5F5F5; /* Основний світлий фон секцій */
+}
+
+/* Стилі для фото профілю */
+.profile-photo {
+    display: block; /* Робить зображення блочним елементом */
+    float: left;    /* Обтікання текстом справа */
+    width: 150px;   /* Бажана ширина фото */
+    height: 150px;  /* Бажана висота фото */
+    border-radius: 50%; /* Робить фото круглим */
+    object-fit: cover; /* Масштабує фото, щоб заповнити контейнер, зберігаючи пропорції */
+    margin-right: 25px; /* Відступ справа від тексту */
+    margin-bottom: 15px; /* Відступ знизу */
+    border: 1px solid #323B4C; /* Рамка в темному кольорі сайту */
+}
+
+/* Додаємо до #about clear: both, щоб секція коректно відображалася після float */
+/* Це краще, ніж додавати зайвий div в HTML */
+#about::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* Досвід та Освіта */
+.job, .education-item {
+    margin-bottom: 30px;
+    padding-left: 15px;
+    border-left: 0.5px solid #323B4C; /* Акцентна лінія зліва */
+}
+.job h3, .education-item h3 {
+    margin-bottom: 5px;
+}
+.job p, .education-item p {
+    margin: 5px 0;
+    font-size: 0.95em;
+}
+.job strong {
+    color: #555;
+}
+.job ul {
+    list-style: disc; /* Повертаємо маркери для списків обов'язків */
+    padding-left: 20px;
+    margin-top: 10px;
+}
+.job ul li {
+    margin-bottom: 5px;
+}
+
+
+/* Навички */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Адаптивна сітка */
+    gap: 20px;
+}
+.skills-grid h3 {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #007bff;
+}
+.skills-grid ul li {
+    margin-bottom: 5px;
+    font-size: 0.95em;
+}
+
+/* Стилі для сітки проектів */
+.projects-grid {
+    display: grid;
+    /* Створює колонки однакової ширини, мінімум 280px */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px; /* Відстань між картками */
+}
+
+/* Стилі для картки проекту */
+.project-card {
+    background-color: #fff; /* Білий фон картки */
+    border: 1px solid #ddd; /* Тонка рамка */
+    border-radius: 8px; /* Заокруглені кути */
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Легка тінь */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавний ефект при наведенні */
+    display: flex; /* Використовуємо flexbox для кращого контролю */
+    flex-direction: column; /* Елементи в картці йдуть зверху вниз */
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* Легкий підйом картки */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Більша тінь */
+}
+
+.project-card h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #323B4C; /* Темний колір для заголовка картки */
+}
+
+.project-card p {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    flex-grow: 1; /* Дозволяє опису займати доступне місце */
+}
+.project-card p:last-of-type {
+     flex-grow: 0; /* Останній параграф (технології) не розтягується */
+     margin-bottom: 20px; /* Відступ перед кнопками */
+}
+
+.project-card strong {
+    color: #555;
+}
+
+/* Стилі для кнопок в картці */
+.project-link {
+    margin-top: auto; /* Притискає кнопки до низу картки */
+    margin-right: 10px; /* Відступ між кнопками */
+    padding: 8px 15px;
+    font-size: 0.9em;
+    text-align: center; /* Центруємо текст на кнопці */
+    display: inline-block; /* Потрібно для правильних відступів та центрування */
+    margin-bottom: 5px; /* Відступ знизу, якщо кнопки переносяться */
+}
+
+/* Опціонально: інший стиль для кнопки GitHub */
+.github-link {
+     background-color: #6c757d; /* Сірий фон */
+     border: none; /* Забираємо рамку, якщо вона є у .button */
+}
+.github-link:hover {
+     background-color: #5a6268;
+}
+
+/* Контакти */
+#contact ul li {
+    margin-bottom: 15px;
+}
+/* Стиль для кнопки завантаження резюме та інших основних кнопок */
+.button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border: none; /* Переконуємось, що немає рамки за замовчуванням */
+    cursor: pointer;
+}
+.button:hover {
+    background-color: #0056b3;
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Футер */
+#footer {
+    background-color: #323B4C; /* Темний фон */
+    color: #ccc; /* Світло-сірий текст */
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+#footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    #header nav ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+    #header nav ul li {
+        margin: 5px 0;
+    }
+     .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Трохи менший мінімум для навичок */
+    }
+    .projects-grid {
+         grid-template-columns: 1fr; /* Одна колонка для проектів на менших екранах */
+    }
+}
+
+@media (max-width: 576px) {
+    .profile-photo {
+        float: none; /* Вимикаємо обтікання */
+        margin-left: auto;  /* Центруємо фото */
+        margin-right: auto; /* Центруємо фото */
+        margin-bottom: 20px; /* Збільшуємо відступ знизу */
+        width: 120px; /* Трохи менше фото на мобільних */
+        height: 120px;
+    }
+     .skills-grid {
+        grid-template-columns: 1fr; /* Одна колонка для навичок */
+    }
+     #hero h1 { font-size: 2em; }
+     #hero h2 { font-size: 1.2em; }
+}
+
+/* Плавний скрол (додаємо до body або html) */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Нова анімація мерехтіння з CodePen */
+@keyframes flicker {
+    0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+      opacity: 0.99;
+      text-shadow: 
+          0 0 0.1em #fff, 0 0 0.2em #fff, 0 0 0.3em #fff, 
+          0 0 0.4em #fed128, 0 0 0.7em #fed128, 0 0 1em #fed128, 0 0 1.5em #fed128; /* Біло-золоте світіння */
+         /* Примітка: #fed128 - це жовто-золотий. Можеш замінити на #007bff (синій) або інший, якщо хочеш */
+    }
+    20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+      opacity: 0.4;
+      text-shadow: none;
+    }
+  }
+  
+  /* Оновлені стилі для #hero h1 */
+  #hero h1 {
+      font-family: 'Sacramento', cursive; /* Застосовуємо курсивний шрифт (або залиш Lato) */
+      font-size: 4.5em; /* Збільшуємо розмір для ефектності */
+      font-weight: normal; /* Курсивні шрифти часто не потребують жирності */
+      color: #fff; /* Білий колір тексту */
+      margin: 0 0 10px 0; /* Відступи */
+      padding: 0;
+      
+      /* Застосовуємо анімацію мерехтіння */
+      animation: flicker 3s linear infinite; /* Назва, тривалість, тип, нескінченно */
+  
+       /* Застосовуємо саме неонове світіння (як у кінцевому кадрі анімації) */
+       /* Це важливо, щоб тінь була видима навіть між мерехтіннями */
+       text-shadow: 
+          0 0 1px #fff, 0 0 3px #fff, 0 0 5px #fff, /* Внутрішнє біле світіння */
+          0 0 7px #fed128, 0 0 10px #fed128, 0 0 15px #fed128; /* Зовнішнє золоте світіння */
+          /* Знову ж таки, можеш змінити #fed128 на інший колір */
+  }
+
+/* Анімація неонового світіння */
+@keyframes neon-glow {
+    from {
+      /* Початковий стан: майже прозорий текст без тіні */
+      opacity: 0.5; 
+      text-shadow: none; 
+    }
+    to {
+      /* Кінцевий стан: повна непрозорість та ефект неону */
+      opacity: 1;
+      /* Ефект неону створюється кількома шарами text-shadow:
+         1. Внутрішня яскрава тінь (колір тексту)
+         2. Трохи ширша розмита тінь (колір тексту)
+         3. Широка, дуже розмита зовнішня "аура" (яскравий колір) 
+         Можна поекспериментувати з кольорами та розмиттям.
+         Приклад для білого тексту на темному фоні:
+      */
+       text-shadow: 
+          0 0 5px #fff,   /* Вузьке біле світіння */
+          0 0 10px #fff,  /* Трохи ширше біле */
+          0 0 20px #007bff, /* Ширша синя "аура" (акцентний колір) */
+          0 0 30px #007bff; /* Ще ширша синя "аура" */
+       /* Якщо фон світлий, можливо, доведеться підібрати інші кольори тіні */
+    }
+  }
+  
+  /* Застосовуємо анімацію до заголовка H1 в секції Hero */
+  #hero h1 {
+      /* Додаємо початковий стиль для тексту, щоб він був "неоновим" */
+      color: #fff; /* Робимо сам текст білим (або іншим яскравим кольором) */
+      
+      /* Параметри анімації */
+      animation-name: flicker;      /* Назва анімації */
+      animation-duration: 1.5s;     /* Тривалість анімації */
+      animation-timing-function: ease-in-out; /* Плавність */
+      animation-delay: 0.5s;        /* Затримка перед початком (щоб сторінка встигла завантажитись) */
+      animation-fill-mode: forwards; /* Залишає кінцевий стан після завершення */
+      
+      /* Початковий стан (до початку анімації з затримкою) - 
+         краще збігається з 'from' в keyframes */
+      opacity: 0.5;
+      text-shadow: none;
+  }
+/* Оновлений стиль для посилань навігації */
+#header nav ul li a {
+    color: rgba(255, 255, 255, 0.6); /* Напівпрозорий білий */
+    font-weight: normal; 
+    text-shadow: none; /* Забираємо тінь */
+    text-transform: uppercase; /* Великі літери */
+    letter-spacing: 1px; /* Невеликий інтервал */
+    font-size: 0.9em;
+    transition: color 0.3s ease;
+}
+
+#header nav ul li a:hover {
+    color: #fff; 
+    text-decoration: none;
+}
+
+/* Оновлений стиль для підзаголовка H2 в Hero */
+#hero h2 {
+    margin-top: 0;
+    font-size: 1.1em; /* Зробимо його меншим відносно H1 */
+    color: rgba(255, 255, 255, 0.5); /* Напівпрозорий білий */
+    border: none;
+    font-weight: normal; /* Забираємо жирність */
+    text-shadow: none; /* Забираємо тінь */
+    text-transform: uppercase; /* Великі літери */
+    letter-spacing: 3px; /* Збільшений інтервал */
+}
