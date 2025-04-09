@@ -103,11 +103,12 @@
                 <h3>Головний спеціаліст відділу цифрової трансформації</h3>
                 <p><strong>Державне агентство розвитку туризму України</strong> | 2022 - т.ч.</p>
                 <ul>
+                    <li>Розробка документації для впровадження нових проектів, нормативно-правових актів</li>
+                    <li>Участь в модернізації, розгортанні та адмініструванні державного реєстра</li>
+                    <li>Участь в поцесі публічних закупівель</li>
                     <li>Підтримка робочого стану комп'ютерної техніки співробітників, забезпечення віддаленого доступу
                         співробітників до необхідних ресурсів</li>
                     <li>Підтримка стабільної роботи діючих проектів компанії</li>
-                    <li>Розробка документації для впровадження нових проектів</li>
-                    <li>Участь в поцесі публічних закупівель</li>
                 </ul>
             </div>
 
@@ -168,6 +169,7 @@
                         <li>CSS</li>
                         <li>Sass</li>
                         <li>Javascript</li>
+                        <li>Typescript</li>
                         <li>React</li>
                         <li>Webflow</li>
                     </ul>
@@ -262,9 +264,10 @@
                 <li>Телефон: <a href="tel:+380666015979">+38 066 601 59 79</a></li>
                 <li>Email: <a href="mailto:k1brusenets@gmail.com">k1brusenets@gmail.com</a></li>
                 <li>Telegram: <a href="https://t.me/Michael_Brusenets" target="_blank">@Michael_Brusenets</a></li>
+                <li>Linkedin: <a href="https://www.linkedin.com/in/mishael-brusenets-30265b197" target="_blank" rel="noopener noreferrer">Mishael Brusenets</a></li>
             </ul>
             <p style="margin-top: 20px;">
-                <a href="./documents/brusenets.pdf" class="button" download>Завантажити резюме (PDF)</a>
+                <a href="./documents/brusenets-cv.pdf" class="button" download>Завантажити резюме (PDF)</a>
             </p>
         </section>
     </main>
@@ -276,7 +279,6 @@
     </footer>
     <button id="scrollTopBtn" title="Повернутись нагору">↑</button>
     <script>
-        // Анімація H1 при завантаженні
         window.addEventListener('load', function () {
             const heroH1 = document.querySelector('#hero h1');
             if (heroH1) {
@@ -284,22 +286,17 @@
             }
         });
 
-        // Логіка Бургер-меню
         const burgerBtn = document.getElementById('burger-btn');
         const mainNav = document.getElementById('main-nav');
 
         if (burgerBtn && mainNav) {
             burgerBtn.addEventListener('click', function () {
-                // Перемикаємо клас для показу/приховування меню
                 mainNav.classList.toggle('nav-active');
-                // Перемикаємо клас для анімації іконки бургера
                 burgerBtn.classList.toggle('active');
-                // Додаємо/забираємо атрибути доступності
                 const isExpanded = burgerBtn.getAttribute('aria-expanded') === 'true';
                 burgerBtn.setAttribute('aria-expanded', !isExpanded);
             });
 
-            // Опціонально: Закривати меню при кліку на посилання
             const navLinks = mainNav.querySelectorAll('a');
             navLinks.forEach(link => {
                 link.addEventListener('click', () => {
@@ -309,12 +306,11 @@
                 });
             });
         }
-        // === Початок: Логіка кнопки "Вгору" ===
+
         const scrollTopBtn = document.getElementById('scrollTopBtn');
-        const scrollThreshold = 200; // Висота скролу (в пікселях), після якої кнопка з'являється
+        const scrollThreshold = 300;
 
         if (scrollTopBtn) {
-            // Функція для перевірки позиції скролу
             const checkScroll = () => {
                 if (window.scrollY > scrollThreshold) {
                     scrollTopBtn.classList.add('visible');
@@ -323,21 +319,17 @@
                 }
             };
 
-            // Показати/сховати кнопку при скролі
             window.addEventListener('scroll', checkScroll);
 
-            // Перевірити стан при завантаженні (якщо сторінка вже проскролена)
             checkScroll();
 
-            // Плавний скрол вгору при кліку
             scrollTopBtn.addEventListener('click', () => {
                 window.scrollTo({
                     top: 0,
-                    behavior: 'smooth' // Плавна анімація скролу
+                    behavior: 'smooth'
                 });
             });
         }
-        // === Кінець: Логіка кнопки "Вгору" ===
     </script>
 </body>
 
