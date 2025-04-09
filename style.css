@@ -234,11 +234,40 @@ li {
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавний ефект при наведенні */
     display: flex; /* Використовуємо flexbox для кращого контролю */
     flex-direction: column; /* Елементи в картці йдуть зверху вниз */
+    position: relative; /* Необхідно для позиціонування псевдо-елемента */
+    overflow: hidden; /* Щоб псевдо-елемент не виходив за межі */
+    z-index: 1; /* Базовий z-index */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 .project-card:hover {
     transform: translateY(-5px); /* Легкий підйом картки */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Більша тінь */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25); /* Більша тінь */
+    color: #007bff;
+}
+
+.project-card::before {
+    content: ""; /* Обов'язково для псевдо-елементів */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    
+    z-index: -1; /* Розміщуємо псевдо-елемент ПІД контентом картки */
+    /* Переконайся, що .project-card має background-color (#fff), 
+       щоб текст не накладався прямо на фон секції */
+       
+    transition: opacity 0.3s ease; /* Плавний ефект при наведенні (опціонально) */
+}
+
+/* Опціонально: Зробити фон трохи яскравішим при наведенні на картку */
+.project-card:hover::before {
+    opacity: 0.7; /* Трохи більша прозорість при наведенні */
+    
 }
 
 .project-card h3 {
@@ -683,4 +712,24 @@ html {
     opacity: 0.8; /* Легка напівпрозорість */
     visibility: visible;
 }
-/* === Кінець: Стилі для кнопки "Вгору" === */
+.tourism{
+    background-image: url('./images/tourism-logo.jpg'); 
+}
+.shameday{
+    background-image: url('./images/shameday-logo.png'); 
+}
+.tellme{
+    background-image: url('./images/tellme-logo.png'); 
+}
+.uastreet{
+    background-image: url('./images/uastreet-logo.png'); 
+}
+.turbomaster{
+    background-image: url('./images/turbomaster-logo.jpg'); 
+}
+.itseems{
+    background-image: url('./images/tellme-logo.png'); 
+}
+.yerchenko{
+    background-image: url('./images/yerchenko-logo.png'); 
+}
