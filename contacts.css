@@ -1,0 +1,176 @@
+/* === Стилі для сторінки контактів === */
+
+/* Спрощений хедер для сторінки контактів */
+.header-simple .header-container {
+    justify-content: flex-start; /* Лого зліва */
+}
+.logo {
+    max-width: 100px !important;
+}
+
+/* Секція "hero" для сторінки контактів */
+#hero-contacts {
+    background-color: #1a1a1a; /* Темний колір як запасний варіант */
+    background-image: url('./images/dark-wall.jpg'); /* Твоє фонове зображення стіни */
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed; 
+    padding: 40px 0; /* Менший паддінг, ніж на головній */
+    text-align: center;
+    color: #fff;
+}
+
+#hero-contacts h1 {
+    font-family: 'Lato', sans-serif; /* Не курсивний, як на головній */
+    font-size: 2.5em; /* Розмір заголовка */
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Проста тінь для читабельності */
+    margin: 0;
+    /* Тут НЕМАЄ неонової анімації */
+}
+
+/* Обгортка для картки контакту */
+.contact-card-wrapper {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-wrap: wrap; /* Для адаптивності */
+    gap: 30px; /* Відстань між фото та інфо */
+    align-items: flex-start; /* Вирівнювання по верху */
+    max-width: 700px; /* Обмеження ширини картки */
+    margin: 20px auto; /* Центрування картки */
+}
+
+.contact-photo-container {
+    flex-basis: 180px; /* Базова ширина для фото */
+    flex-grow: 0;
+    text-align: center;
+}
+
+.profile-photo-contact {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #323B4C; /* Рамка в стилі сайту */
+    margin: 0 auto 15px auto;
+}
+
+.contact-info {
+    flex-basis: calc(100% - 210px); /* Решта ширини для інфо (180 + 30 gap) */
+    flex-grow: 1;
+}
+
+.contact-info h2 {
+    font-size: 2em;
+    color: #323B4C;
+    margin-top: 0;
+    margin-bottom: 5px;
+    border-bottom: none; /* Забираємо стандартну лінію під h2 */
+}
+
+.contact-title {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+.contact-info ul li {
+    display: flex; /* Для вирівнювання іконки та тексту */
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.contact-info ul li .contact-icon {
+    margin-right: 12px;
+    font-size: 1.3em; /* Розмір іконки */
+    min-width: 25px; /* Щоб текст вирівнювався */
+    text-align: center;
+}
+
+.contact-info ul li a {
+    color: #333; /* Колір посилань контактів */
+    text-decoration: none;
+    word-break: break-all; /* Для довгих email або посилань */
+}
+
+.contact-info ul li a:hover {
+    color: #007bff; /* Колір при наведенні */
+    text-decoration: underline;
+}
+
+.vcard-download {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.vcard-download .button .button-icon {
+    margin-right: 8px;
+}
+
+.footer-link {
+    color: #ccc;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+.footer-link:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+
+/* Адаптивність для сторінки контактів */
+@media (max-width: 768px) {
+    #hero-contacts h1 {
+        font-size: 2em;
+    }
+    .contact-card-wrapper {
+        padding: 20px;
+    }
+    .contact-info h2 {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-card-wrapper {
+        flex-direction: column; /* Фото над текстом */
+        align-items: center; /* Центруємо все */
+        text-align: center;
+    }
+    .contact-photo-container {
+        flex-basis: auto; /* Автоматична ширина для фото */
+    }
+    .contact-info {
+        flex-basis: auto; /* Автоматична ширина для інфо */
+        width: 100%;
+    }
+    .contact-info ul li {
+        justify-content: center; /* Центруємо пункти списку */
+        font-size: 1em;
+    }
+    .contact-info ul li .contact-icon {
+        margin-right: 8px;
+    }
+    .vcard-download {
+        text-align: center; /* Центруємо кнопку */
+    }
+    #hero-contacts h1 {
+        font-size: 1.8em;
+    }
+    .contact-info h2 {
+        font-size: 1.6em;
+    }
+}
