@@ -1,2 +1,5 @@
 User-Agent: *
+Allow: /
+
+Sitemap: https://bmkiyv.github.io/sitemap.xml
 
