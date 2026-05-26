@@ -1,5 +1,5 @@
-{  "short_name": "#RUSSIANSHAMEDAY",
-"name": "CALLING ON THE GLOBAL COMMUNITY TO UNITE FOR",
+{  "short_name": "MY WEBSITE",
+"name": "Brusenets Michael's Portfolio",
 "start_url": ".",
 "icons": [
   {
@@ -18,17 +18,17 @@
     "type": "image/png"
   },
   {
-    "src": "/images/logo32.png",
+    "src": "/images/favicon32.png",
     "sizes": "32x32",
     "type": "image/png"
   },
   {
-    "src": "/images/logo16.png",
+    "src": "/images/favicon16.png",
     "sizes": "16x16",
     "type": "image/png"
   }
 ],
-"theme_color":"#af864f",
+"theme_color":"#D4AF37",
 "background_color":"#ffffff",
 "display":"standalone"
 }
